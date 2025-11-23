@@ -1,25 +1,20 @@
-```markdown
 # API Hub Documentation
 
 Modern, developer-friendly API documentation portal built with Next.js 14. A centralized hub for all your internal and external APIs with beautiful documentation inspired by industry leaders like Stripe and Vercel.
 
-![Next.js 14](https://img.shields.io/badge/Next.js-14.0-black?style=for-the-badge&logo=next.js)
-![TypeScript 5.0](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![API Hub](https://img.shields.io/badge/Next.js-14.0-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
-
----
 
 ## 🚀 Features
 
-- **Modern Documentation**: Clean, responsive design with light/dark mode support
+- **Modern Documentation**: Clean, responsive design with dark/light mode support
 - **API Explorer**: Interactive API testing and live examples
 - **Multi-format Support**: REST, GraphQL, and WebSocket documentation
-- **Search & Filter**: Quickly find APIs with advanced search and filtering
-- **SDK Integration**: Ready-to-use code examples in multiple programming languages
-- **Developer Focused**: Designed around smooth developer workflows
-- **Real-time Updates**: Live API status and changelog tracking
-
----
+- **Search & Filter**: Find APIs quickly with advanced search and filtering
+- **SDK Integration**: Ready-to-use code examples in multiple languages
+- **Developer Focused**: Built with developers' workflow in mind
+- **Real-time Updates**: Live status and changelog tracking
 
 ## 🏗️ Project Structure
 
@@ -27,40 +22,38 @@ Modern, developer-friendly API documentation portal built with Next.js 14. A cen
 api-hub-docs/
 ├── src/
 │   ├── app/                 # App Router (Next.js 14)
-│   ├── components/          # Reusable React components (Navbar, Footer, ApiCard, etc.)
-│   ├── lib/                 # Utility functions and configuration files
+│   ├── components/          # Reusable React components
+│   ├── lib/                 # Utilities and configurations
 │   ├── hooks/               # Custom React hooks
-│   ├── store/               # State management (e.g. Zustand, Redux)
-│   ├── types/               # TypeScript type definitions
-│   └── data/                # Static data (API metadata, navigation, etc.)
-├── content/                 # MDX files for documentation content
-└── public/                  # Static assets (images, fonts, etc.)
+│   ├── store/               # State management
+│   ├── types/               # TypeScript definitions
+│   └── data/                # Static data and content
+├── content/                 # MDX documentation
+└── public/                  # Static assets
 ```
-
----
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 14 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **UI Components**: Custom React components
+- **UI Components**: Custom component library
 - **Icons**: Lucide React
-- **Font**: Inter (Google Fonts)
+- **Font**: Inter
 - **Deployment**: Vercel (recommended)
-
----
 
 ## 📦 Installation
 
 1. **Clone the repository**
-   ```
+
+   ```bash
    git clone https://github.com/your-username/api-hub-docs.git
    cd api-hub-docs
    ```
 
 2. **Install dependencies**
-   ```
+
+   ```bash
    npm install
    # or
    yarn install
@@ -68,18 +61,22 @@ api-hub-docs/
    pnpm install
    ```
 
-3. **Configure environment variables**
-   ```
+3. **Set up environment variables**
+
+   ```bash
    cp .env.example .env.local
    ```
-   Edit `.env.local` as needed:
-   ```
+
+   Edit `.env.local` with your configuration:
+
+   ```env
    NEXTAUTH_URL=http://localhost:3000
    NEXTAUTH_SECRET=your-secret-key
    ```
 
-4. **Start development server**
-   ```
+4. **Run the development server**
+
+   ```bash
    npm run dev
    # or
    yarn dev
@@ -87,17 +84,16 @@ api-hub-docs/
    pnpm dev
    ```
 
-5. **Open your browser at**
-   [http://localhost:3000](http://localhost:3000)
-
----
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 🎯 Quick Start
 
 ### Adding a New API
 
-1. Add API metadata in `src/data/apis.ts`:
-   ```
+1. **Add API data** in `src/data/apis.ts`:
+
+   ```typescript
    {
      id: 'your-api',
      name: 'Your API Name',
@@ -109,14 +105,15 @@ api-hub-docs/
    }
    ```
 
-2. Create documentation page in `src/app/apis/[category]/[apiId]/page.tsx`.
+2. **Create API documentation page** in `src/app/apis/[category]/[apiId]/page.tsx`
 
-3. Update navigation menu in `src/data/navigation.ts`.
+3. **Update navigation** in `src/data/navigation.ts`
 
 ### Customizing Styles
 
-Edit CSS variables in `src/app/globals.css` for theming:
-```
+The project uses CSS variables for theming. Edit `src/app/globals.css` to customize colors:
+
+```css
 :root {
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
@@ -124,120 +121,112 @@ Edit CSS variables in `src/app/globals.css` for theming:
 }
 ```
 
----
-
 ## 📚 Documentation Structure
 
-- **Home**: Landing page with featured APIs and quickstart guide
-- **APIs**: Directory listing all available APIs
+- **Home**: Landing page with featured APIs and quick start
+- **APIs**: Complete directory of all available APIs
 - **Documentation**: Getting started guides and tutorials
-- **Changelog**: Track API updates and version history
+- **Changelog**: API updates and version history
 - **Blog**: Technical articles and updates
-
----
 
 ## 🎨 Components
 
 ### Core Components
-- `ApiCard` — API info display card
-- `ApiSearch` — Search bar with filtering
-- `CodeBlock` — Syntax-highlighted code snippets
-- `EndpointDoc` — Detailed API endpoint docs
-- `ResponseSchema` — Response format schema
+
+- `ApiCard` - Display API information in grid layout
+- `ApiSearch` - Search and filter APIs
+- `CodeBlock` - Syntax-highlighted code examples
+- `EndpointDoc` - API endpoint documentation
+- `ResponseSchema` - Response format documentation
 
 ### Layout Components
-- `Navbar` — Navigation bar
-- `Sidebar` — API navigation sidebar
-- `Footer` — Site footer with useful links
 
----
+- `Header` - Navigation with search
+- `Sidebar` - API navigation sidebar
+- `Footer` - Site footer with links
 
 ## 🔧 Configuration
 
 ### Tailwind CSS
 
-Customize design tokens in `tailwind.config.js`:
-```
+Edit `tailwind.config.js` for custom design system:
+
+```javascript
 module.exports = {
   theme: {
     extend: {
       colors: {
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-        }
-      }
-    }
-  }
-}
+          DEFAULT: "hsl(var(--primary))",
+        },
+      },
+    },
+  },
+};
 ```
 
-### Next.js Configuration
+### Next.js Config
 
-Example `next.config.js` for App Router and external images:
-```
+Update `next.config.js` for advanced configurations:
+
+```javascript
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     appDir: true,
   },
   images: {
-    domains: ['your-domain.com'],
-  }
-}
-module.exports = nextConfig
+    domains: ["your-domain.com"],
+  },
+};
 ```
-
----
 
 ## 📱 API Categories
 
-- **Core & Authentication**: User and auth management APIs
-- **Trading & Crypto**: Real-time trading and market data APIs
-- **Payments & Finance**: Payment gateways and financial data
-- **Data & AI**: Analytics, machine learning, and data services
-- **Utilities**: Email, SMS, IP lookup, storage, and helpers
-
----
+- **Core & Authentication**: User management, auth, and core services
+- **Trading & Crypto**: Real-time market data and trading APIs
+- **Payments & Finance**: Payment processing and financial data
+- **Data & AI**: Analytics, machine learning, and data processing
+- **Utilities**: Email, SMS, storage, and helper services
 
 ## 🚀 Deployment
 
-### Recommended: Vercel
+### Vercel (Recommended)
 
-1. Push your project to GitHub
-2. Import repo in [Vercel](https://vercel.com)
-3. Setup environment variables
-4. Deploy!
+1. **Push to GitHub**
+2. **Import project** on [Vercel](https://vercel.com)
+3. **Configure environment variables**
+4. **Deploy!**
 
 ### Other Platforms
 
-- **Netlify:** Use `@netlify/plugin-nextjs` for serverless
-- **AWS Amplify / Manual AWS:** For full backend plus hosting
-- **Docker:** Use Dockerfile for containerized deployment
+The project can be deployed on any platform that supports Next.js:
 
-```
+- **Netlify**: Use `@netlify/plugin-nextjs` build plugin
+- **AWS**: Use AWS Amplify or deploy manually
+- **Docker**: Use the provided `Dockerfile`
+
+```bash
+# Build for production
 npm run build
+
+# Start production server
 npm start
 ```
 
----
-
 ## 🤝 Contributing
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-1. Fork the repo
-2. Create your feature branch (`git checkout -b feature/awesome-feature`)
-3. Commit changes (`git commit -m 'Add awesome feature'`)
-4. Push branch (`git push origin feature/awesome-feature`)
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
-
----
 
 ## 📄 License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🆘 Support
 
@@ -246,11 +235,9 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 - 💬 [Discord Community](https://discord.gg/api-hub)
 - 📧 [Email Support](mailto:support@api-hub.com)
 
----
-
 ## 🙏 Acknowledgments
 
-- Inspired by Stripe's exceptional API documentation
+- Inspired by Stripe's excellent API documentation
 - Built with Next.js and Tailwind CSS
 - Icons by Lucide React
 - Fonts by Google Fonts
@@ -258,4 +245,3 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 ---
 
 Built with ❤️ by the API Hub team.
-```
